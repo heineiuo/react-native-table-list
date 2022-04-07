@@ -6,11 +6,10 @@ import {
   TouchableOpacity,
   View,
   useColorScheme,
+  useWindowDimensions,
 } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { useScreenDimensions } from '../hooks'
-import { useColors } from '../hooks/useColors'
 import { HorizontalWrapper } from './HorizontalWrapper'
 import {
   TableListCellCustomComponentProps,
@@ -23,13 +22,14 @@ import { DefaultCellAccessoryComponent } from './default-components/DefaultCellA
 import { DefaultCellContentComponent } from './default-components/DefaultCellContentComponent'
 import { DefaultCellImageComponent } from './default-components/DefaultCellImageComponent'
 import { DefaultItemSeperatorComponent } from './default-components/DefaultItemSeperatorComponent'
+import { useColors } from './useColors'
 
 export function TableList<
   ItemT extends Record<string, unknown>,
   SectionT extends Record<string, unknown>,
   ListT extends Record<string, unknown>
 >(props: TableListProps<ItemT, SectionT, ListT>): JSX.Element {
-  const { height } = useScreenDimensions()
+  const { height } = useWindowDimensions()
   const {
     sections,
     keyExtractor,

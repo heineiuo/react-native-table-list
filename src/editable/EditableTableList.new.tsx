@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useReducer } from 'react'
 
-import { BogeField } from '../../types'
 import { TableList } from '../TableList.new'
+import { BogeField } from '../boge'
 import { EditableCellContentComponent } from './EditableCellContentComponent.new'
 import { EditableContext } from './EditableContext'
 import {

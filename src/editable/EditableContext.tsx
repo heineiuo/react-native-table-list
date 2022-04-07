@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import { BogeField } from '../../types'
+import { BogeField } from '../boge'
 import { EditableContextState } from './EditableTypes'
 
 export const EditableContext = createContext({} as EditableContextState)

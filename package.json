@@ -1,15 +1,39 @@
 {
   "name": "react-native-table-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.js",
   "files": [
     "lib"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:commonjs && npm run build:module && npm run build:typescript",
+    "build:commonjs": "tsc src/*.ts* --module commonjs --moduleResolution node --target es5 --jsx 'react-jsx' --sourceMap --skipLibCheck --allowSyntheticDefaultImports --outDir lib/commonjs",
+    "build:module": "tsc src/*.ts* --module es2020 --moduleResolution node --target es5 --jsx 'react-jsx' --sourceMap --skipLibCheck --allowSyntheticDefaultImports --outDir lib/module",
+    "build:typescript": "tsc src/*.ts* --declaration --emitDeclarationOnly --jsx 'react-jsx'  --skipLibCheck --allowSyntheticDefaultImports  --outDir lib/typescript"
+  },
+  "dependencies": {
+    "@ant-design/colors": "^6.0.0",
+    "@expo/vector-icons": "^12.0.5",
+    "@react-navigation/native": "^6.0.8",
+    "gql-tag": "^1.0.1",
+    "prop-types": "^15.7.2",
+    "react": "*",
+    "react-native": "*",
+    "react-native-draggable-flatlist": "3.0.4",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-image-picker": "^4.0.6",
+    "react-native-platform-color": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-native": "^0.67.3",
+    "expo": "^44.0.6",
+    "typescript": "^4.6.3"
+  }
 }

@@ -1,5 +1,5 @@
-import { BogeField, BogeFieldValue, BogeFieldValueType } from '../../types'
 import { TableListProps, TableListPropsNew } from '../TableListTypes'
+import { BogeField, BogeFieldValue, BogeFieldValueType } from '../boge'
 
 export type UpdateFieldAction =
   | {

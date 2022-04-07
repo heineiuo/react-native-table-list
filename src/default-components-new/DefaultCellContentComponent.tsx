@@ -3,8 +3,8 @@ import { ReactNode, useContext } from 'react'
 import { ListRenderItemInfo, Text, useColorScheme, View } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { useColors } from '../../hooks/useColors'
 import { EditableContext } from '../editable/EditableContext'
+import { useColors } from '../useColors'
 import { WidgetMap } from '../widgets/WidgetMap'
 
 function FallbackComponent() {

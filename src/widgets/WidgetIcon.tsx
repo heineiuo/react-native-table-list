@@ -1,7 +1,7 @@
 import { Text, useColorScheme, View } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { getPlatformColorFromString } from '../../utils/getPlatformColorFormString'
+import { getPlatformColorFromString } from '../getPlatformColorFormString'
 
 export function WidgetIcon(props: { widgetName: string }) {
   useColorScheme()

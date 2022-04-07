@@ -1,7 +1,7 @@
+import { MaterialIcons } from '@expo/vector-icons'
 import { View } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { Icon } from '../../Icon'
 import { TableListCellCustomComponentProps } from '../TableListTypes'
 
 export function DefaultCellAccessoryComponent(
@@ -18,15 +18,15 @@ export function DefaultCellAccessoryComponent(
       }}
     >
       {accessoryType === 'disclosure' && (
-        <Icon
-          name="ChevronRight"
+        <MaterialIcons
+          name="chevron-right"
           size={22}
           color={PlatformColor('tertiaryLabel')}
         />
       )}
       {accessoryType === 'checkmark' && (
-        <Icon
-          name="Check"
+        <MaterialIcons
+          name="check"
           size={20}
           style={{ marginRight: 6 }}
           color={PlatformColor('link')}

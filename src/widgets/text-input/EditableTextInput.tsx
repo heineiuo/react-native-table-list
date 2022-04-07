@@ -2,8 +2,8 @@ import { useCallback } from 'react'
 import { Platform, Text, TextInput, useColorScheme, View } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { BogeFieldValueType, BogeTextInputField } from '../../../types'
 import { TableListCellCustomComponentProps } from '../../TableListTypes'
+import { BogeFieldValueType, BogeTextInputField } from '../../boge'
 import { useEditableCell } from '../../editable/EditableContext'
 
 export function CellTextInputComponent(

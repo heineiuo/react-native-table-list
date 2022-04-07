@@ -1,27 +1,28 @@
+import { MaterialIcons } from '@expo/vector-icons'
 import { useCallback, useEffect, useState } from 'react'
 import { Modal, Text, useColorScheme, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-
 import { Asset, launchImageLibrary } from 'react-native-image-picker'
-import { BogeFieldValueType, BogeImagePickerField } from '../../../types'
-import { TableListCellCustomComponentProps } from '../../TableListTypes'
-import { Icon } from '../../../Icon'
-import { useEditableCell } from '../../editable/EditableContext'
-import { ImagePickerItem } from './ImagePickerItem'
 import { PlatformColor } from 'react-native-platform-color'
 
+import { TableListCellCustomComponentProps } from '../../TableListTypes'
+import { BogeFieldValueType, BogeImagePickerField } from '../../boge'
+import { useEditableCell } from '../../editable/EditableContext'
+import { ImagePickerItem } from './ImagePickerItem'
+
 export function CellImagePickerComponent(
-  props: TableListCellCustomComponentProps<
+  props: { upload: any } & TableListCellCustomComponentProps<
     {
       id: string
       valueType: BogeFieldValueType
       required?: boolean
+      upload: any
     },
     any
   >
 ): JSX.Element {
   useColorScheme()
-  const { item } = props
+  const { upload, item } = props
   const { value, readOnly, updateField } =
     useEditableCell<BogeImagePickerField>()
   const [list, setList] = useState<
@@ -106,12 +107,13 @@ export function CellImagePickerComponent(
                 alignItems: 'center',
               }}
             >
-              <Icon name="Plus" color={PlatformColor('systemBlue')} />
+              <MaterialIcons name="add" color={PlatformColor('systemBlue')} />
             </TouchableOpacity>
           )}
           {list.map((item) => {
             return (
               <ImagePickerItem
+                upload={upload}
                 onUpload={(asset) => onUpload(item, asset)}
                 style={{
                   width: 80,

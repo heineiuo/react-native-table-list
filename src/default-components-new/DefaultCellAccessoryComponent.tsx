@@ -1,7 +1,6 @@
+import { MaterialIcons } from '@expo/vector-icons'
 import { ListRenderItemInfo, useColorScheme, View } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
-
-import { Icon } from '../../Icon'
 
 export function DefaultCellAccessoryComponent<ItemT>(
   props: ListRenderItemInfo<ItemT>
@@ -19,15 +18,15 @@ export function DefaultCellAccessoryComponent<ItemT>(
       }}
     >
       {accessoryType === 'disclosure' && (
-        <Icon
-          name="ChevronRight"
+        <MaterialIcons
+          name="chevron-right"
           size={22}
           color={PlatformColor('systemGray5')}
         />
       )}
       {accessoryType === 'checkmark' && (
-        <Icon
-          name="Check"
+        <MaterialIcons
+          name="check"
           size={20}
           style={{ marginRight: 6 }}
           color={PlatformColor('link')}

@@ -5,6 +5,7 @@ import {
   View,
   FlatList,
   ListRenderItem,
+  useWindowDimensions,
 } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
@@ -15,13 +16,12 @@ import { DefaultCellAccessoryComponent } from './default-components-new/DefaultC
 import { DefaultCellContentComponent } from './default-components-new/DefaultCellContentComponent'
 import { DefaultCellImageComponent } from './default-components-new/DefaultCellImageComponent'
 import { DefaultItemSeperatorComponent } from './default-components/DefaultItemSeperatorComponent'
-import { useColors } from '../hooks/useColors'
-import { useScreenDimensions } from '../hooks'
+import { useColors } from './useColors'
 
 export function TableList<ItemT extends Record<string, any>>(
   props: TableListPropsNew<ItemT>
 ): JSX.Element {
-  const { height } = useScreenDimensions()
+  const { height } = useWindowDimensions()
   const {
     onDragEnd,
     data,

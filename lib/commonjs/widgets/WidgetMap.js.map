@@ -1,0 +1,1 @@
+{"version":3,"file":"WidgetMap.js","sourceRoot":"","sources":["../../../src/widgets/WidgetMap.ts"],"names":[],"mappings":";;;AAAA,uEAA0E;AAC1E,0EAA6E;AAC7E,0EAA6E;AAC7E,0DAA6D;AAC7D,oEAAuE;AACvE,iEAAoE;AAEvD,QAAA,SAAS,GAAG;IACvB,SAAS,EAAE,0CAAsB;IACjC,WAAW,EAAE,8CAAwB;IACrC,MAAM,EAAE,oCAAmB;IAC3B,QAAQ,EAAE,wCAAqB;IAC/B,UAAU,EAAE,4CAAuB;IACnC,WAAW,EAAE,8CAAwB;CAC7B,CAAA"}

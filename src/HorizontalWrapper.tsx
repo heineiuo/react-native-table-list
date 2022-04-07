@@ -1,30 +1,28 @@
-import { ReactNode, useCallback, useState } from 'react'
-import { View } from 'react-native'
+import { ReactNode, useCallback, useState } from "react";
+import { useWindowDimensions, View } from "react-native";
 
-import { useScreenDimensions } from '../hooks'
-
-type FunctionChildren = (params: { width: number }) => JSX.Element
+type FunctionChildren = (params: { width: number }) => JSX.Element;
 
 export function HorizontalWrapper(props: {
-  children?: ReactNode | FunctionChildren
+  children?: ReactNode | FunctionChildren;
 }): JSX.Element {
-  const { width } = useScreenDimensions()
-  const [childWidth, setChildWidth] = useState<null | number>(null)
+  const { width } = useWindowDimensions();
+  const [childWidth, setChildWidth] = useState<null | number>(null);
 
   const onLayout = useCallback(
     (e) => {
-      const { width } = e.nativeEvent.layout
+      const { width } = e.nativeEvent.layout;
       if (width !== childWidth) {
-        setChildWidth(width)
+        setChildWidth(width);
       }
     },
     [childWidth]
-  )
+  );
 
   return (
     <View
       style={{
-        alignItems: 'center',
+        alignItems: "center",
       }}
     >
       <View
@@ -34,16 +32,16 @@ export function HorizontalWrapper(props: {
         onLayout={onLayout}
       >
         {(() => {
-          if (typeof props.children === 'function') {
+          if (typeof props.children === "function") {
             if (childWidth === null) {
-              return null
+              return null;
             }
 
-            return props.children({ width })
+            return props.children({ width });
           }
-          return props.children
+          return props.children;
         })()}
       </View>
     </View>
-  )
+  );
 }

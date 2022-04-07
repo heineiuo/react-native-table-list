@@ -1,0 +1,1 @@
+{"version":3,"file":"EditableContext.js","sourceRoot":"","sources":["../../../src/editable/EditableContext.tsx"],"names":[],"mappings":";;;AAAA,+BAAiD;AAKpC,QAAA,eAAe,GAAG,IAAA,qBAAa,EAAC,EAA0B,CAAC,CAAA;AAM3D,QAAA,mBAAmB,GAAG,IAAA,qBAAa,EAAC;IAC/C,OAAO,EAAE,EAAE;CACqB,CAAC,CAAA;AAEnC,SAAgB,eAAe;IAC7B,OAAO,IAAA,kBAAU,EAAC,2BAAmB,CAAgC,CAAA;AACvE,CAAC;AAFD,0CAEC"}

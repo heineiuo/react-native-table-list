@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from 'react'
 import { Text, useColorScheme, View, TouchableOpacity } from 'react-native'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { BogeFieldValueType, BogeFormSelectField } from '../../../types'
 import { TableListCellCustomComponentProps } from '../../TableListTypes'
+import { BogeFieldValueType, BogeFormSelectField } from '../../boge'
 import { useEditableCell } from '../../editable/EditableContext'
 
 export function CellFormSelectComponent(

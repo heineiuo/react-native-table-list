@@ -11,20 +11,16 @@ import {
 import { Asset } from 'react-native-image-picker'
 import { PlatformColor } from 'react-native-platform-color'
 
-import { useApp } from '../../../contexts/AppContext'
-import { useUpload } from '../../../hooks'
-
 export function ImagePickerItem(
   props: Asset &
     Pick<Required<Asset>, 'uri'> & {
+      upload: any
       remoteUri?: string
       onUpload?: (asset: { remoteUri: string }) => void
       style?: StyleProp<ViewStyle>
     }
 ) {
-  const { uri, style, onUpload, fileName, type } = props
-  const upload = useUpload()
-  const { appId } = useApp()
+  const { uri, style, onUpload, fileName, type, upload } = props
   const [error, setError] = useState<Error>()
   const [remoteUri, setRemoteUri] = useState(props.remoteUri)
   const [progress, setProgress] = useState(props.remoteUri ? 1 : 0)
@@ -61,7 +57,7 @@ export function ImagePickerItem(
       remove2()
       remove3()
     }
-  }, [uri, remoteUri, appId, fileName, upload, onUpload])
+  }, [uri, remoteUri, fileName, upload, onUpload])
 
   return (
     <TouchableOpacity

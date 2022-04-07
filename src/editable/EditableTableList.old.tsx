@@ -6,8 +6,8 @@ import {
   useReducer,
 } from 'react'
 
-import { BogeField, BogeFieldValue } from '../../types'
 import { TableList } from '../TableList'
+import { BogeField, BogeFieldValue } from '../boge'
 import { EditableCellContentComponent } from './EditableCellContentComponent'
 import { EditableContext } from './EditableContext'
 import {
